@@ -8,28 +8,46 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #ffffff;
+            background-color: #333333;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
-        h1, h2 {
-            color: #2c3e50;
+        h1, h2, h3 {
+            color: #ffffff;
         }
         .project {
-            background-color: #f4f4f4;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .tech-stack {
-            background-color: #e7f5fe;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
+            background-color: #444444;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         ul {
             padding-left: 20px;
+        }
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tech-badge {
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        a {
+            color: #87CEEB;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #ADD8E6;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -39,32 +57,44 @@
     <p>Security Engineer with a passion for building new stuff.</p>
     
     <div class="project">
-        <h2>TuskVector</h2>
-        <p>TuskVector is an API framework for vector operations, emphasizing Python-based backend and HTML/HTMX for frontend interactions.</p>
+        <h2>TuskVector - API Platform for Vector Operations</h2>
+        
+        <div class="tech-badges">
+            <span class="tech-badge" style="background-color: #3776AB;">Python</span>
+            <span class="tech-badge" style="background-color: #336791;">pgvector</span>
+            <span class="tech-badge" style="background-color: #FF6B6B;">HNSW</span>
+            <span class="tech-badge" style="background-color: #412991;">OpenAI ada2</span>
+            <span class="tech-badge" style="background-color: #005571;">FastAPI</span>
+            <span class="tech-badge" style="background-color: #000000;">HTMX</span>
+        </div>
+        
+        <p>TuskVector is an API framework that transforms data into 1536D vectors, employs HNSW indexing for efficient information retrieval, and enhances databases with advanced search capabilities.</p>
+        
         <h3>Key Features:</h3>
         <ul>
-            <li>Vector embedding and storage</li>
-            <li>Similarity search using HNSW index</li>
-            <li>Integration with ada02 text embedding and GPT 4o</li>
-            <li>API key management</li>
+            <li>Vector embedding using OpenAI's text-embedding-ada-002 model</li>
+            <li>Efficient similarity search with HNSW index and cosine similarity metric</li>
+            <li>Context-aware LLM queries integrating OpenAI's GPT models</li>
+            <li>Configurable HNSW parameters (M=16, ef_construction=64)</li>
+            <li>Sub-second response times for up to 1 million vectors</li>
         </ul>
-    </div>
-    
-    <div class="tech-stack">
-        <h2>Tech Stack</h2>
+        
+        <h3>Tech Stack:</h3>
         <ul>
-            <li>Python</li>
-            <li>FastAPI for API development</li>
-            <li>SQLAlchemy with PostgreSQL and pgvector extension</li>
-            <li>OpenAI API for embeddings and LLM queries</li>
-            <li>HTMX for frontend interactivity (JavaScript-free approach)</li>
+            <li>Backend: Python with FastAPI</li>
+            <li>Database: PostgreSQL with pgvector extension</li>
+            <li>ORM: SQLAlchemy</li>
+            <li>AI/ML: OpenAI API for embeddings (ada2) and LLM queries (GPT 4o)</li>
+            <li>Frontend: HTMX for JavaScript-free interactivity</li>
         </ul>
+        
+        <p>TuskVector aims to provide a robust vector operation platform with minimal boilerplate, focusing on Python backend efficiency and HTMX for streamlined frontend interactions.</p>
+        
+        <p>
+            <a href="https://github.com/niklas-xgh-dev/tuskvector">View on GitHub</a> |
+            <a href="https://tuskvector.com">Official Website</a> |
+            <a href="https://tuskvector.com/docs">API Documentation</a>
+        </p>
     </div>
-    
-    <p>The goal of this project was to a robust application with minimal boilerplate and without relying on JavaScript, focusing instead on Python backend efficiency and HTMX for frontend interactions.</p>
-    
-    <footer>
-        <p>View the project on <a href="https://github.com/niklas-xgh-dev/tuskvector">GitHub</a></p>
-    </footer>
 </body>
 </html>
