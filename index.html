@@ -10,35 +10,40 @@
             line-height: 1.6;
             color: #ffffff;
             background-color: #333333;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         h1, h2, h3 {
             color: #ffffff;
         }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
         .project {
             background-color: #444444;
             border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 30px;
+            padding: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         ul {
             padding-left: 20px;
+            margin: 10px 0;
         }
         .tech-badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 5px;
+            margin-bottom: 10px;
         }
         .tech-badge {
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 3px 6px;
+            border-radius: 3px;
             color: white;
             font-weight: bold;
-            font-size: 0.9em;
+            font-size: 0.7em;
         }
         a {
             color: #87CEEB;
@@ -49,135 +54,85 @@
             color: #ADD8E6;
             text-decoration: underline;
         }
+        h2 {
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+        p, ul {
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
     <h1>Niklas's Projects</h1>
     
-    <div class="project">
-        <h2>TuskVector</h2>
-        
-        <div class="tech-badges">
-            <span class="tech-badge" style="background-color: #3776AB;">Python</span>
-            <span class="tech-badge" style="background-color: #336791;">PostgreSQL</span>
-            <span class="tech-badge" style="background-color: #336791;">pgvector</span>
-            <span class="tech-badge" style="background-color: #FF6B6B;">HNSW</span>
-            <span class="tech-badge" style="background-color: #412991;">ada2</span>
-            <span class="tech-badge" style="background-color: #005571;">FastAPI</span>
-            <span class="tech-badge" style="background-color: #000000;">HTMX</span>
+    <div class="projects-grid">
+        <div class="project">
+            <h2>TuskVector</h2>
+            
+            <div class="tech-badges">
+                <span class="tech-badge" style="background-color: #3776AB;">Python</span>
+                <span class="tech-badge" style="background-color: #336791;">PostgreSQL</span>
+                <span class="tech-badge" style="background-color: #FF6B6B;">HNSW</span>
+                <span class="tech-badge" style="background-color: #005571;">FastAPI</span>
+            </div>
+            
+            <p>Lightweight API framework for vector similarity search using pgvector and HNSW indexing on OpenAI embeddings in PostgreSQL.</p>
+            
+            <p>
+                <a href="https://github.com/niklas-xgh-dev/tuskvector">GitHub</a> |
+                <a href="https://tuskvector.com">Demo</a> |
+                <a href="https://tuskvector.com/docs">API Docs</a>
+            </p>
         </div>
-        
-        <p>TuskVector is a lightweight API framework leveraging pgvector and HNSW indexing to facilitate vector similarity search on OpenAI embeddings within a PostgreSQL database.</p>
-        
-        <h3>Key Features and Tech Stack:</h3>
-        <ul>
-            <li>Backend: Python with FastAPI</li>
-            <li>Vector Operations: OpenAI's text-embedding-ada-002 model for 1536D embeddings</li>
-            <li>Search: HNSW index with cosine similarity (configurable M=16, ef_construction=64)</li>
-            <li>Database: PostgreSQL with pgvector extension, using SQLAlchemy ORM</li>
-            <li>LLM Integration: OpenAI API for embeddings (ada2) and LLM queries (GPT 4o)</li>
-            <li>Frontend: HTMX for JavaScript-free interactivity</li>
-        </ul>
-        
-        <p>
-            <a href="https://github.com/niklas-xgh-dev/tuskvector">View Code on GitHub</a> |
-            <a href="https://tuskvector.com">Demo Page</a> |
-            <a href="https://tuskvector.com/docs">API Docs</a>
-        </p>
-    </div>
 
-    <div class="project">
-        <h2>go-ip-recon</h2>
-        
-        <div class="tech-badges">
-            <span class="tech-badge" style="background-color: #00ADD8;">Go</span>
-            <span class="tech-badge" style="background-color: #E34F26;">Network Tools</span>
-            <span class="tech-badge" style="background-color: #7B42BC;">Cross-platform</span>
+        <div class="project">
+            <h2>go-ip-recon</h2>
+            
+            <div class="tech-badges">
+                <span class="tech-badge" style="background-color: #00ADD8;">Go</span>
+                <span class="tech-badge" style="background-color: #E34F26;">Network Tools</span>
+                <span class="tech-badge" style="background-color: #7B42BC;">Cross-platform</span>
+            </div>
+            
+            <p>Simple IP reconnaissance tool written in Go for gathering basic information about an IP address using various network tools.</p>
+            
+            <p>
+                <a href="https://github.com/niklas-xgh-dev/go-ip-recon">GitHub</a>
+            </p>
         </div>
-        
-        <p>go-ip-recon is a simple IP reconnaissance tool written in Go. This project aims to gather basic information about an IP address using various network tools.</p>
-        
-        <h3>Key Features:</h3>
-        <ul>
-            <li>OS detection via ping TTL analysis</li>
-            <li>Hostname lookup using nslookup</li>
-            <li>Basic port scanning for 20 cybersecurity-relevant ports</li>
-            <li>Cross-platform support (Windows and macOS)</li>
-            <li>Traceroute analysis</li>
-        </ul>
-        
-        <h3>Tech Stack:</h3>
-        <ul>
-            <li>Go 1.16 or higher</li>
-            <li>Native Go libraries for network operations</li>
-            <li>Cross-platform build scripts</li>
-        </ul>
-        
-        <p>
-            <a href="https://github.com/niklas-xgh-dev/go-ip-recon">View Code on GitHub</a>
-        </p>
-    </div>
 
-    <div class="project">
-        <h2>GoLogger</h2>
-        
-        <div class="tech-badges">
-            <span class="tech-badge" style="background-color: #00ADD8;">Go</span>
-            <span class="tech-badge" style="background-color: #336791;">PostgreSQL</span>
-            <span class="tech-badge" style="background-color: #005571;">Elasticsearch</span>
-            <span class="tech-badge" style="background-color: #E95420;">Ubuntu</span>
+        <div class="project">
+            <h2>GoLogger</h2>
+            
+            <div class="tech-badges">
+                <span class="tech-badge" style="background-color: #00ADD8;">Go</span>
+                <span class="tech-badge" style="background-color: #336791;">PostgreSQL</span>
+                <span class="tech-badge" style="background-color: #005571;">Elasticsearch</span>
+            </div>
+            
+            <p>Comprehensive log collection system for gathering and storage of system logs, recently refactored from Python to Go for enhanced performance.</p>
+            
+            <p>
+                <a href="https://github.com/niklas-xgh-dev/gologger">GitHub</a>
+            </p>
         </div>
-        
-        <p>GoLogger is a comprehensive log collection system designed for gathering and storage of system logs, recently refactored from Python to Go for enhanced performance and concurrency.</p>
-        
-        <h3>Key Features:</h3>
-        <ul>
-            <li>Extensible Log Collection (system metrics, modular design)</li>
-            <li>High-Performance Data Processing (optimized parsing, concurrent processing)</li>
-            <li>Scalable Storage (PostgreSQL, planned Elasticsearch integration)</li>
-            <li>Resource-Efficient Alternative to Elastic Agent and Metricbeat</li>
-        </ul>
-        
-        <h3>Tech Stack:</h3>
-        <ul>
-            <li>Go 1.20+ for core functionality</li>
-            <li>PostgreSQL for current log storage and querying</li>
-            <li>Planned Elasticsearch integration</li>
-            <li>Ubuntu OS compatibility</li>
-        </ul>
-        
-        <p>
-            <a href="https://github.com/niklas-xgh-dev/gologger">View Code on GitHub</a>
-        </p>
-    </div>
 
-    <div class="project">
-        <h2>SSG - Static Site Generator</h2>
-        
-        <div class="tech-badges">
-            <span class="tech-badge" style="background-color: #3776AB;">Python</span>
-            <span class="tech-badge" style="background-color: #E34F26;">HTML</span>
-            <span class="tech-badge" style="background-color: #563D7C;">CSS</span>
+        <div class="project">
+            <h2>SSG - Static Site Generator</h2>
+            
+            <div class="tech-badges">
+                <span class="tech-badge" style="background-color: #3776AB;">Python</span>
+                <span class="tech-badge" style="background-color: #E34F26;">HTML</span>
+                <span class="tech-badge" style="background-color: #563D7C;">CSS</span>
+            </div>
+            
+            <p>Python-based static site generator developed as part of the backend development course on Boot.dev. Generates static HTML pages from various input formats.</p>
+            
+            <p>
+                <a href="https://github.com/niklas-xgh-dev/ssg">GitHub</a>
+            </p>
         </div>
-        
-        <p>SSG is a Python-based static site generator developed as part of the backend development course on Boot.dev. It provides a simple way to generate static HTML pages from various input formats.</p>
-        
-        <h3>Key Components:</h3>
-        <ul>
-            <li>main.py: Entry point of the application</li>
-            <li>htmlnode.py: Defines the HTMLNode class for HTML element representation</li>
-            <li>textnode.py: Defines the TextNode class</li>
-        </ul>
-        
-        <h3>Tech Stack:</h3>
-        <ul>
-            <li>Python 3.x</li>
-            <li>unittest for testing</li>
-        </ul>
-        
-        <p>
-            <a href="https://github.com/niklas-xgh-dev/ssg">View Code on GitHub</a>
-        </p>
     </div>
 </body>
 </html>
